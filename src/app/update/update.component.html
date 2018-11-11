@@ -1,0 +1,27 @@
+
+  <div class="row">
+    <h5>
+     <a  (click)="showUpdateObj()" >  Update Record </a>  
+      </h5>
+  <div class="form-group col-md-4">
+    <label for="id">Id:</label>
+    <input [(ngModel)]="uid" type="text" class="form-control" id="">
+  </div>
+  <div class="form-group col-md-4">
+    <label for="name">Name:</label>
+    <input [(ngModel)]="uname"  type="text" class="form-control" id="">
+  </div>
+  <div class="form-group col-md-4">
+    <label for="Salary">Salary:</label>
+    <input [(ngModel)]="usalary"   type="text" class="form-control" id="">
+  </div>
+  <div class="form-group col-md-4">
+    <label for="Department">Department:</label>
+    <input  [(ngModel)]="udep"  type="text" class="form-control" id="">
+  </div>
+  <div class="form-group col-md-4">
+  <button type="button" (click)="UpdateRecord()" class="btn btn-primary btn-sm">Update Record</button>
+    </div>
+ </div>
+
+

@@ -1,0 +1,44 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Employee Management System
+  </h1>
+</div>
+
+
+<div class="container">
+  <h5>
+    Add Employee
+  </h5>
+  
+   <div class="row">
+    <div class="form-group col-md-4">
+      <label for="id">Id:</label>
+      <input [(ngModel)]="id" type="text" class="form-control" id="usr">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="name">Name:</label>
+      <input [(ngModel)]="name"  type="text" class="form-control" id="usr2">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="Salary">Salary:</label>
+      <input [(ngModel)]="salary"   type="text" class="form-control" id="usr3">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="Department">Department:</label>
+      <input  [(ngModel)]="dep"  type="text" class="form-control" id="usr4">
+    </div>
+    <div class="form-group col-md-4">
+        <!-- <button type="button" (click)="addEmp()" class="btn btn-primary btn-sm">Add Employee</button>
+      -->
+     <a (click)="addEmp()" > App Emp  </a>     
+      </div>
+   
+   </div>
+  
+
+   <app-table [newRecord]="passRecord">  </app-table>
+
+  </div>
+
+

@@ -1,0 +1,35 @@
+
+   <table *ngIf="tableArray.length > 0"  class="table">
+    <thead>
+      <tr>
+        <!-- <th (click)="sortNumbers('id')">Id  </th>
+        <th (click)="sortStings('name')">Name</th>
+        <th (click)="sortNumbers('salary')">Salary</th>
+        <th (click)="sortStings('dep')">Department</th> -->
+
+        <th >Id <input type="text" (keyup)="setFilter(filterId,'id')"  [(ngModel)]="filterId"> </th>
+        <th >Name <input type="text"  (keyup)="setFilter(filterName,'name')" [(ngModel)]="filterName">  </th>
+        <th >Salary <input type="text" (keyup)="setFilter(filterSal,'salary')" [(ngModel)]="filterSal"> </th>
+        <th >Department <input type="text" (keyup)="setFilter(filterDep,'dep')" [(ngModel)]="filterDep"> </th>
+        <th>action</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let a of tableArray | tableFilter: filterObj.value : filterObj.col ; let i= index;">
+      <tr  >
+        <td>{{a.id}}</td>
+        <td>{{a.name}}</td>
+        <td>{{a.salary}}</td>
+        <td>{{a.dep}}</td>
+        <td>  <button type="button" (click)="updateIndex = i" class="btn btn-primary btn-sm">Update</button> <button type="button" (click)="delete()" class="btn btn-primary btn-sm">Delete</button>
+        </td>
+        </tr>
+      
+    </tbody>
+  </table> 
+
+
+    
+  <app-update (updatedRec)="fromChild($event)" [updateRecord]="tableArray[updateIndex]" [indexPos]="updateIndex" > </app-update>
+
+
+  <a (click)="show()">Table Values</a>
